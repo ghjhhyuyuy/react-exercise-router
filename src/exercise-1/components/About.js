@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
 class About extends Component {
     render() {
         return (
@@ -9,7 +10,7 @@ class About extends Component {
             <br/>
             <span>For more information,please</span><br/>
             <span>view our </span>
-            <span>website.</span>
+            <NavLink className="red" exact to='/'>website.</NavLink>
           </div>
         );
       }
