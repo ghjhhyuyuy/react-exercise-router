@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../styles/App.css';
-import {BrowserRouter,NavLink,Route} from 'react-router-dom';
+import {BrowserRouter,NavLink,Route, Switch} from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
 import About from './About';
@@ -17,11 +17,18 @@ class App extends Component {
         <NavLink id="link" activeStyle={{textDecoration: 'underline'}} to='/my-profile'>My Profile</NavLink>
         <NavLink id="link" activeStyle={{textDecoration: 'underline'}} to='/about-us'>About Us</NavLink>
         </header>
-        <Route exact path="/" component={Home}></Route>
-        <Route path="/my-profile" component={Profile}></Route>
+        <Switch>
+          <Route exact path="/" component={Home}></Route>
+          <Route path="/my-profile" component={Profile}></Route>
         <Route path="/about-us" component={About}></Route>
         <Route exact path="/products" component={Products}></Route>
         <Route path="/products/:id" component={ProductDetails}></Route>
+        <Route component={Home}></Route>
+        </Switch>
+        <Switch>
+        <Route exact path="/goods" component={Products}></Route>
+        </Switch>
+        
         </BrowserRouter>
       </div>
     );
